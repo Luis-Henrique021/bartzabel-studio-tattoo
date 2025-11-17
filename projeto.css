@@ -1,0 +1,61 @@
+:root {
+    --cor-primaria: #000; /* Preto */
+    --cor-secundaria: #d81116; /* Vermelho vibrante */
+    --cor-tercearia: #6c757d; /* Cinza médio */
+    --cor-fundo: #000; /* Preto */
+    --cor-texto: #ffffff; /* Branco */
+    --fonte-principal: 'Metal Mania', system-ui; /* Fonte personalizada para títulos */
+    --fonte-titulo: 'Roboto Slab', system-ui; /* Fonte personalizada para subtítulos */
+    --fonte-texto: 'Roboto', system-ui; /* Fonte personalizada para texto */
+}
+
+/* CONGIGURAÇÕES GERAIS */
+body {
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+}
+
+/* Título Principal */
+h1, h2 {
+    font-family: var(--fonte-principal);
+    color: var(--cor-secundaria);
+}
+
+/* Subtítulos */
+h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria);
+}
+
+/* Texto Normal */
+p, li, a, span, div {
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+}
+
+/* Linha Horizontal Customizada */
+.linha-horizontal {
+   border: 2px solid var(--cor-tercearia);
+   margin: 20px 10px;
+}
+
+
+/* A PARTIR DAQUI MEXE NO home.html */
+
+/* Logo */
+#logo {
+    width: 10%;
+    height: 10%;
+}
+
+/* Carrossel */
+#carouselExample .carousel-item img {
+    width: 25%;
+    height: 25%;
+}
+.carousel-inner {
+    border: 2px solid red;
+}
+
+/* A PARTIR DAQUI MEXE NO sobre.html */
