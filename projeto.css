@@ -72,7 +72,7 @@ p, li, span, div {
 .nav-masthead .nav-link:hover, .nav-masthead .nav-link:focus {
     border-bottom-color: rgba(255, 255, 255, .25); /* ...deixe sublinhado */
 }
-/* dentro do menu: seleciona para modificar um link dentro do link */
+/* seleciona todos os links que tem outro link antes deles */
 .nav-masthead .nav-link + .nav-link {
     margin-left: 1rem; /* adciona um espaçamento a esquerda dos links do menu */
 }
@@ -98,7 +98,27 @@ p, li, span, div {
 }
 
 /* A PARTIR DAQUI MEXE NO portfolio.html */
+/* FAZER ALGO NO QUADRO DO PORTFOLIO??
+.quadro-portfolio {
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    border: 0.5px solid var(--cor-secundaria);
+} */
 
+/* Imagens */
+.foto-tattoo {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 
+/* Moldura das Imagens */
+.moldura-foto_tattoo {
+    border: 1px solid var(--cor-tercearia);
+    transition: ease-in-out 0.5s;
+}
+.moldura-foto_tattoo:hover {
+    transform: scale(1.05); /* Aumenta a imagem levemente ao passar o mouse (scale) */
+    border: 2px solid var(--cor-secundaria);
+}
 
 /* A PARTIR DAQUI MEXE NO sobre.html */
