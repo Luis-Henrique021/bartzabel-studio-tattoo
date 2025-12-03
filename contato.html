@@ -33,17 +33,86 @@
 
     <!-- CONTEÚDO -->
     <main>
-   
-    </main>
 
-    <!-- RODAPÉ DA PÁGINA -->
-    <footer class="mt-auto text-white-50 fs-6 text-center pt-5">
-        <p>
-            Atendimento somente com hora marcada <br>
-            &copy; 2025 Bartzabel Tattoo Studio
-        </p>
-    </footer>
+        <!-- FOMULÁRIO -->
+        <h2>Formulário de Contato</h2>
+        <form action="/" method="post" id="form_contato" class="my-2 mx-5" enctype="multipart/form-data" data-bs-theme="dark">
 
+            <!-- Nome do Cliente -->
+            <div class="mb-3">
+                <label for="nome_cliente" class="form-label">Digite seu nome</label>
+                <input type="text" id="nome_cliente" class="form-control" name="nome_cliente" placeholder="Ex: Luis Henrique" required>
+            </div>
+
+            <!-- Perfil do Instagram -->
+            <div class="mb-3">
+                <label for="insta_cliente" class="form-label">Digite o @ do seu Instagram</label>
+                <!-- Para aparecer o @ antes da resposta -->
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" id="insta_cliente" class="form-control" name="insta_cliente" placeholder="Ex: Luis_Henrique" required>
+                </div>
+                <!-- Aviso de contato -->
+                <div id="aviso_insta" class="form-text">
+                (Entraremos em contato pelo direct do Instagram)
+                </div>     
+            </div>
+            
+            <!-- Idade -->
+            <div class="mb-3">
+                <label for="idade_cliente" class="form-label">Digite sua idade</label>
+                <input type="number" id="idade_cliente" class="form-control" name="idade_cliente" placeholder="Apenas números" required>
+            </div>
+
+            <!-- Primeira tatuagem? -->
+            <div>
+                <!-- Pergunta -->
+                <p class="form-label">Essa será sua primeira tatuagem?</p>
+                <!-- Sim -->
+                <div class="form-check form-check-inline mb-3">
+                    <input type="radio" id="sim" class="form-check-input" name="primeira_vez" value="sim">
+                    <label for="sim" class="form-check-label">Sim</label>
+                </div>
+                <!-- Não -->
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="nao" class="form-check-input" name="primeira_vez" value="nao">
+                    <label for="nao" class="form-check-label">Não</label>
+                </div>
+            </div>
+            
+            <!-- Inserir arte do projeto -->
+            <div class="mb-3">
+                <label for="img_projeto" class="form-label">Insira a arte do projeto:</label>
+                <input type="file" id="img_projeto" class="form-control" name="img_projeto">
+            </div>
+            
+            <!-- Região do Tamanho -->
+            <div class="mb-3">
+                <label for="regiao_tattoo" class="form-label">Em qual região seria?</label>
+                <input type="text" id="regiao_tattoo" class="form-control" name="regiao_tattoo" placeholder="Ex: Braço direito" required>
+            </div>
+
+            <!-- Tamanho aproximado -->
+            <div class="mb-3">
+                <label for="tamanho_tattoo" class="form-label">Qual tamanho aproximado, em centímetros?</label>
+                <div class="input-group">
+                    <input type="number" id="tamanho_tattoo" class="form-control" name="tamanho_tattoo" placeholder="Apenas números" required>
+                    <!-- Para aparecer o cm depois da resposta -->
+                    <span class="input-group-text">cm</span>
+                </div>
+            </div>
+
+            <!-- Observações adicionais -->
+            <div class="mb-3">
+                <label for="obs_adici" class="form-label">Possui alguma observação adicional?</label>
+                <textarea id="obs_adici" class="form-control" name="obs_adici" placeholder="Escreva aqui..."></textarea>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-lg btn-danger">Enviar</button>
+            </div>
+        </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
