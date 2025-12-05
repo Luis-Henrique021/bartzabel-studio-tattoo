@@ -10,6 +10,7 @@
     --cor-fundo: #000; /* Preto */
     --cor-texto: #ffffff; /* Branco */
     --cor-detalhes: rgba(216, 17, 22, 0.3);
+    --cor-detalhes-claro: rgba( 255, 255, 255, 0.1);
     --fonte-principal: 'Metal Mania', system-ui; /* Fonte personalizada para títulos */
     --fonte-titulo: 'Roboto Slab', system-ui; /* Fonte personalizada para subtítulos */
     --fonte-texto: 'Roboto', system-ui; /* Fonte personalizada para texto */
@@ -129,7 +130,6 @@ p, li, span, div {
 #mapa_studio {
     width: 100%;
     height: 300px;
-    padding: 1.5rem;
     border: 0;
     border-radius: 50px;
 }

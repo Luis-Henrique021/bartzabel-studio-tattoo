@@ -34,24 +34,26 @@
     <!-- CONTEÚDO -->
     <main>
 
-        <!-- FOMULÁRIO -->
-        <h2>Formulário de Contato</h2>
-        <form action="/" method="post" id="form_contato" class="my-2 mx-5" enctype="multipart/form-data" data-bs-theme="dark">
+        <!-- Formulário -->
+        <h2 class="display-5 text-center">Formulário de Contato</h2>
+        <form action="teste.py" method="post" id="form_contato" class="my-2 mx-5" enctype="multipart/form-data" data-bs-theme="dark" onsubmit="return verificarFormulario()" novalidate>
 
             <!-- Nome do Cliente -->
             <div class="mb-3">
-                <label for="nome_cliente" class="form-label">Digite seu nome</label>
+                <label for="nome_cliente" class="form-label">Digite seu nome <span class="text-danger">*</span></label>
                 <input type="text" id="nome_cliente" class="form-control" name="nome_cliente" placeholder="Ex: Luis Henrique" required>
+                <span id="erro_nome-cliente"></span>
             </div>
 
             <!-- Perfil do Instagram -->
             <div class="mb-3">
-                <label for="insta_cliente" class="form-label">Digite o @ do seu Instagram</label>
+                <label for="insta_cliente" class="form-label">Digite o @ do seu Instagram <span class="text-danger">*</span></label>
                 <!-- Para aparecer o @ antes da resposta -->
                 <div class="input-group">
                     <span class="input-group-text">@</span>
                     <input type="text" id="insta_cliente" class="form-control" name="insta_cliente" placeholder="Ex: Luis_Henrique" required>
                 </div>
+                <span id="erro_perfil"></span>
                 <!-- Aviso de contato -->
                 <div id="aviso_insta" class="form-text">
                 (Entraremos em contato pelo direct do Instagram)
@@ -60,16 +62,17 @@
             
             <!-- Idade -->
             <div class="mb-3">
-                <label for="idade_cliente" class="form-label">Digite sua idade</label>
-                <input type="number" id="idade_cliente" class="form-control" name="idade_cliente" placeholder="Apenas números" required>
+                <label for="idade_cliente" class="form-label">Digite sua idade <span class="text-danger">*</span></label>
+                <input type="number" id="idade_cliente" class="form-control" name="idade_cliente" placeholder="Apenas números" minlength="0" required>
+                <span id="erro_idade"></span>
             </div>
 
             <!-- Primeira tatuagem? -->
-            <div>
+            <div class="mb-3">
                 <!-- Pergunta -->
-                <p class="form-label">Essa será sua primeira tatuagem?</p>
+                <p class="form-label">Essa será sua primeira tatuagem? <span class="text-danger">*</span></p>
                 <!-- Sim -->
-                <div class="form-check form-check-inline mb-3">
+                <div class="form-check form-check-inline">
                     <input type="radio" id="sim" class="form-check-input" name="primeira_vez" value="sim">
                     <label for="sim" class="form-check-label">Sim</label>
                 </div>
@@ -78,28 +81,35 @@
                     <input type="radio" id="nao" class="form-check-input" name="primeira_vez" value="nao">
                     <label for="nao" class="form-check-label">Não</label>
                 </div>
+
+                <div id="erro_primeira-tattoo" class="text-warning"></div>
             </div>
             
             <!-- Inserir arte do projeto -->
             <div class="mb-3">
-                <label for="img_projeto" class="form-label">Insira a arte do projeto:</label>
+                <label for="img_projeto" class="form-label">Insira a arte do projeto <span class="text-danger">*</span></label>
                 <input type="file" id="img_projeto" class="form-control" name="img_projeto">
+                <span id="erro_envio-arquivo"></span>
+                <!-- Aviso de tamanho máximo -->
+                <div id="aviso_arquivo" class="form-text">(Máximo de 5MB)</div>
             </div>
             
             <!-- Região do Tamanho -->
             <div class="mb-3">
-                <label for="regiao_tattoo" class="form-label">Em qual região seria?</label>
+                <label for="regiao_tattoo" class="form-label">Em qual região seria? <span class="text-danger">*</span></label>
                 <input type="text" id="regiao_tattoo" class="form-control" name="regiao_tattoo" placeholder="Ex: Braço direito" required>
+                <span id="erro_regiao-tattoo"></span>
             </div>
 
             <!-- Tamanho aproximado -->
             <div class="mb-3">
-                <label for="tamanho_tattoo" class="form-label">Qual tamanho aproximado, em centímetros?</label>
+                <label for="tamanho_tattoo" class="form-label">Qual tamanho aproximado, em centímetros? <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <input type="number" id="tamanho_tattoo" class="form-control" name="tamanho_tattoo" placeholder="Apenas números" required>
                     <!-- Para aparecer o cm depois da resposta -->
                     <span class="input-group-text">cm</span>
                 </div>
+                <span id="erro_tamanho-tattoo"></span>
             </div>
 
             <!-- Observações adicionais -->
@@ -113,6 +123,43 @@
                 <button type="submit" class="btn btn-lg btn-danger">Enviar</button>
             </div>
         </form>
+
+        <hr class="linha-horizontal m-5">
+
+        <!-- Icone Instagram e Localização do Studoi -->
+        <div class="container d-grid d-md-inline-flex justify-content-md-evenly">
+            <!-- Icone para Insta do Studio -->
+            <div class="text-center">
+                <h3>Nos siga no Instagram!</h3>
+                <a href="https://www.instagram.com/o_bartzabel.ink/" target="_blank">
+                    <i class="fa-brands fa-instagram fa-6x" style="color: #ffffff;"></i>
+                </a>
+            </div>
+
+            <!-- LOCALIZAÇÃO DO ESTÚDIO -->
+            <div class="text-center mt-5 mt-md-0">
+                <h3>Localização</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.2421797949314!2d-46.47089402462407!3d-23.631496478751668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce68f0287e3b4f%3A0xd036fac55813149c!2sR.%20Francisco%20L%C3%B4bo%2C%2063%20-%20S%C3%A3o%20Rafael%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2008311-140!5e0!3m2!1spt-BR!2sbr!4v1764720470329!5m2!1spt-BR!2sbr" 
+                id="mapa_studio" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer class="mt-auto text-white-50 fs-6 text-center pt-5">
+        <p>
+            Atendimento somente com hora marcada <br>
+            &copy; 2025 Bartzabel Tattoo Studio
+        </p>
+    </footer>
+
+    <!-- Meu JS -->
+    <script src="projeto.js"></script>
+    <!-- JS - FontAwesome -->
+    <script src="https://kit.fontawesome.com/df3a0108f8.js" crossorigin="anonymous"></script>
+    <!-- JS - Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
